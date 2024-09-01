@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles.css">
-  <title>CashCrate</title>
-</head>
-<body>
- <!-- Modular Log in Window -->
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
 
+    <title>CashCrate</title>
+  </head>
+  <body>
+    <!-- Modular Log in Window -->
 
+    <div class="modal-login">
+      <h3>Log in below:</h3>
+      <form class="user-login">
+        <input
+          type="text"
+          placeholder="username"
+          class="login-input"
+          required
+        />
+        <input
+          type="password"
+          placeholder="password"
+          id="pass"
+          name="password"
+          minlength="8"
+          required
+        />
 
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Lc-MTQqAAAAALV7XZleXgOKdBuJK76Dkg-F_fEJ"
+        ></div>
 
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
-<script src="/script.js"></script>
-</body>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/script.js"></script>
+  </body>
 </html>

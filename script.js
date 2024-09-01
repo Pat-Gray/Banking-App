@@ -81,3 +81,62 @@ const account4 = {
   currency: 'GBP',
   locale: 'en-GB',
 };
+
+const accounts = [account1, account2, account3, account4];
+
+// Google reCaptcha
+// document
+//   .getElementById('.user-login')
+//   .addEventListener('submit', function (event) {
+//     event.preventDefault();
+
+//     // Get the reCAPTCHA response
+//     const captchaResponse = grecaptcha.getResponse();
+
+//     if (captchaResponse.length === 0) {
+//       alert('Please complete the CAPTCHA');
+//       return;
+//     }
+
+//     // Normally, you would send this response to your server for validation
+//     // For now, we just log it to the console
+//     console.log('CAPTCHA Response:', captchaResponse);
+
+//     // Example of form data to send to a server
+//     const formData = new FormData(event.target);
+//     formData.append('captcha-response', captchaResponse);
+
+//     // You can use fetch or XMLHttpRequest to send the data to your server
+//     // Example with fetch:
+//     grecaptcha.ready(function () {
+//       grecaptcha
+//         .execute('6Lc-MTQqAAAAALV7XZleXgOKdBuJK76Dkg-F_fEJ', {
+//           action: 'submit',
+//         })
+//         .then(function (token) {
+//           // Add your logic to submit to your backend server here.
+//           console.log('CAPTCHA token:', token);
+//         });
+//     });
+//   });
+
+//CREATE USERNAMES
+const createUsernames = function (accs) {
+  accs.forEach(acc => {
+    acc.username = acc.user
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUsernames(accounts);
+
+//CREATE PASSWORD
+const createPassword = function (accs) {
+  accs.forEach(acc => {
+    acc.password = 1234;
+  });
+};
+createPassword(accounts);
